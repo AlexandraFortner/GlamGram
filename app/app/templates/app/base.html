@@ -13,15 +13,7 @@
 <body>
     <center>
         <div class='container' style="width: 50%">
-            <h1>Instagram
-                <hr>
-            </h1>
-            <form action="" method="get">
-                {{ form }}
-            </form>
-            {% for photo in Photos %}
-            <p> {{photo.photo}}</p>
-            {% endfor %}
+            {% block body %} {% endblock body %}
         </div>
     </center>
 </body>

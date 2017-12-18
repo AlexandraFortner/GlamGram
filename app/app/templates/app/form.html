@@ -1,0 +1,15 @@
+{% extends 'app/base.html' %} {% block body %}
+<div class="container">
+    <div class="col-lg-4 col-lg-offset-4">
+        <br>
+        <form method='POST'>
+            {{ form }}
+            <br>
+            <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+            <hr> {% if cleaned == None %}
+            <h3>No Photos In Gallery</h3>
+            {% endif %}
+        </form>
+    </div>
+</div>
+{% endblock body %}
