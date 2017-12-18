@@ -1,13 +1,16 @@
-{% extends 'app/base.html' %} {% block body %}
+{% extends 'app/base.html' %}{% load static %} {% block body %}
 <div class="container">
     <div class="col-lg-4 col-lg-offset-4">
-        <br>
         <form method='POST' enctype="multipart/form-data">
             {{ form }} {% csrf_token %}
             <br>
             <button type="submit" id="submit" class="btn btn-primary">Submit</button>
             <hr>
         </form>
+        <br> {% for photo in photos %}
+        <img src="{% static photo.image_url %}?t={% now 'u' %}" class='img-responsive'>
+        <br>
+        <hr> {% endfor %}
     </div>
 </div>
 {% endblock body %}

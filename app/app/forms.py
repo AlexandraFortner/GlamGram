@@ -1,6 +1,8 @@
 from django import forms
+from app.models import Photo
 
 
-class PhotoForm(forms.Form):
-    '''Returns the form for photos. (docstring for later editing) '''
-    photo = forms.ImageField()
+class PhotoForm(forms.ModelForm):
+    class Meta:
+        model = Photo
+        fields = ('photo', )

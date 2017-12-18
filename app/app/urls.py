@@ -4,5 +4,6 @@ from app import views
 app_name = 'app'
 
 urlpatterns = [
-    path('feed/', views.feed),
+    path('upload/', views.upload),
+    path('feed/', views.feed, name='feed'),
 ]
