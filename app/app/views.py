@@ -2,17 +2,23 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
 from app.models import Photo
 from django.http import HttpRequest, HttpResponse
-from app import forms, models
+from app import form, models
+from django import forms
 
 
 def upload(request):
     '''Photo Form for Upload.'''
-    form = forms.PhotoForm(request.POST, request.FILES)
-    if form.is_valid():
-        form.save()
+    FILTER_CHOICES = [('blur', 'Blur'), ('sharpen', 'Sharpen')]
+    form1 = form.PhotoForm(request.POST, request.FILES)
+    filter = forms.CharField(
+        label='Filters:', widget=forms.Select(choices=FILTER_CHOICES))
+    if form1.is_valid():
+        form1.save()
         return redirect('app:feed')
     else:
-        return render(request, 'app/form.html', {'form': form})
+        return render(request, 'app/form.html',
+                      {'form': form1,
+                       'filter': filter})
 
 
 def feed(request):

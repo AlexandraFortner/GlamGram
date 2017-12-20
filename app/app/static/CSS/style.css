@@ -1,8 +1,17 @@
-h3 {
-    color: #fc95a8;
+html {
+    background-color: #bf98a0;
 }
 
 img {
     width: 40%;
     height: 40%;
+}
+
+.box {
+    margin-bottom: 20px;
+    padding: 10px 15px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    border-style: outset;
+    /* border-color: #22cc77; */
 }
