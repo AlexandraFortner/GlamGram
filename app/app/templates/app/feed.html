@@ -1,10 +1,10 @@
 {% extends 'app/base.html' %}{% load static %} {% block body %}
 <div class="container">
     <div class="col-lg-4 col-lg-offset-4">
-        <form method='POST' enctype="multipart/form-data">
-            {{ form }} {% csrf_token %}
+        <form action='{% url "app:upload" %}' method='POST' enctype="multipart/form-data">
+            {% csrf_token %}
             <br>
-            <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+            <a href="{% url 'app:upload' %}">Upload</a>
             <hr>
         </form>
         <br> {% for photo in photos %}
