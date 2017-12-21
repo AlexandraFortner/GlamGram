@@ -8,17 +8,15 @@ from django import forms
 
 def upload(request):
     '''Photo Form for Upload.'''
-    FILTER_CHOICES = [('blur', 'Blur'), ('sharpen', 'Sharpen')]
-    form1 = form.PhotoForm(request.POST, request.FILES)
-    filter = forms.CharField(
-        label='Filters:', widget=forms.Select(choices=FILTER_CHOICES))
-    if form1.is_valid():
-        form1.save()
-        return redirect('app:feed')
+    if request.POST or request.FILES:
+        form1 = form.PhotoForm(request.POST, request.FILES)
+        if form1.is_valid():
+            form1.save()
+            return redirect('app:feed')
+        else:
+            return render(request, 'app/form.html', {'form': form1})
     else:
-        return render(request, 'app/form.html',
-                      {'form': form1,
-                       'filter': filter})
+        return render(request, 'app/form.html', {'form': form.PhotoForm()})
 
 
 def feed(request):
