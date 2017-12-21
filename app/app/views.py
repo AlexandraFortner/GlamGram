@@ -23,5 +23,5 @@ def upload(request):
 
 def feed(request):
     '''Main view of feed.'''
-    photos = models.Photo.objects.all()
+    photos = models.Photo.objects.all().order_by('-uploaded_at')
     return render(request, 'app/feed.html', {'photos': photos})
