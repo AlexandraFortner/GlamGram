@@ -9,6 +9,12 @@
         </form>
         <br> {% for photo in photos %}
         <img src="{% static photo.image_url %}?t={% now 'u' %}" class='img-responsive'>
+        <form action="{% url 'app:filter' photo.id %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <button type="submit">
+                Filter
+            </button>
+        </form>
         <br>
         <hr> {% endfor %}
     </div>
