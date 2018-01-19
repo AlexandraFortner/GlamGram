@@ -1,10 +1,15 @@
 html {
-    background-color: #bf98a0;
+    background-color: #c4a190;
 }
 
 img {
     width: 50%;
     height: 50%;
+}
+
+.logo {
+    width: 40%;
+    height: 40%;
 }
 
 .box {

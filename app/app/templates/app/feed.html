@@ -1,6 +1,7 @@
 {% extends 'app/base.html' %} {% load static %} {% block body %}
 <div class="container">
     <div class="col-lg-4 col-lg-offset-4">
+
         <form action='{% url "app:upload" %}' method='POST' enctype="multipart/form-data">
             {% csrf_token %}
             <br>
@@ -12,7 +13,7 @@
         <form action="{% url 'app:filter' photo.id %}" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <button type="submit">
-                Filter
+                • Filter •
             </button>
         </form>
         <br>

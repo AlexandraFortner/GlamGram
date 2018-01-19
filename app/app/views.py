@@ -29,6 +29,8 @@ def feed(request):
 
 
 class PictureFilter(View):
+    '''Runs the base filters.'''
+
     def get(self, request, image_id):
         form = Filters()
         path = 'app/static/' + Photo.objects.get(id=image_id).image_url()
