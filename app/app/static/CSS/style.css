@@ -12,6 +12,12 @@ img {
     height: 40%;
 }
 
+button {
+    background-color: #c4a190;
+    border-radius: 12px;
+    border-color: gray;
+}
+
 .box {
     margin-bottom: 20px;
     padding: 10px 15px;
