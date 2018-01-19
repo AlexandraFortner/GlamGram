@@ -8,14 +8,22 @@ img {
 }
 
 .logo {
-    width: 40%;
-    height: 40%;
+    width: 38%;
+    height: 50%;
+    object-fit: cover;
 }
 
 button {
     background-color: #c4a190;
     border-radius: 12px;
     border-color: gray;
+}
+
+a {
+    background-color: #c4a190;
+    color: black;
+    padding: 2px 6px 2px 6px;
+    border-radius: 12px;
 }
 
 .box {
