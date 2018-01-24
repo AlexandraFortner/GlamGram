@@ -6,16 +6,26 @@ img {
     width: 50%;
     height: 50%;
 }
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+    border-color: #5a0117;
+}
 
 button {
     background-color: #c4a190;
     border-radius: 12px;
     border-color: gray;
+    color: #5a0117;
 }
 
 a {
     background-color: #c4a190;
-    color: black;
+    color: #5a0117;
     padding: 2px 6px 2px 6px;
     border-radius: 12px;
 }
